@@ -1,0 +1,33 @@
+DATA SEGMENT
+    ARR DW 0FFFFH,0FEEEH,3333H,4444H
+    SEARCH DW 3333H
+    INDEX DB 00H 
+    LEN EQU 04
+     
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+START:
+    MOV AX,DATA
+    MOV DS, AX
+
+    LEA SI,ARR
+    MOV CL,LEN
+    MOV AX,SEARCH
+    MOV BL,LEN
+
+    BACK: CMP AX,[SI]
+          JNZ SKIP    
+          SUB BL,CL
+          MOV INDEX,BL
+          
+    SKIP: ADD SI,2
+          LOOP BACK
+          
+MOV AX,4CH
+INT 21H
+
+CODE ENDS
+END START
+

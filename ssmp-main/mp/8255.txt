@@ -1,0 +1,26 @@
+Initialise Port A as input port in mode 0 Program
+1000: MOV SI,1500H
+1003: MOV AL,90H
+1005: OUT C6H,AL
+1007: IN AL,C0H
+1009: MOV [SI],AL
+100B: HLT
+Initialise Port A as input port and Port B as output port in mode 0
+Program
+1000: MOV AL,90H
+1002: OUT C6H,AL
+1004: IN AL,C0H
+1006: OUT C2H,AL
+1008: HLT
+Initialise Port C as output port in mode 0 Program
+1000: MOV AL,90H
+1002: OUT C6H,AL
+1004: MOV AL,80H
+1006: OUT C4H,AL
+1008: HLT
+Handshaking in mode 1 Program
+1000: MOV AL,84H
+1002: OUT C6H,AL
+1004: MOV AL,45H
+1006: OUT C2H,AL
+1008: HLT

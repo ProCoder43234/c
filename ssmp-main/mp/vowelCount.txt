@@ -1,0 +1,51 @@
+data segment
+    string db 'aereoroplane'
+    substring db 'rop'
+    len1 dw ($-string)-2
+    len2 dw ($-substring)-2
+    found db 00h    
+data ends
+
+code segment
+assume cs:code,ds:data
+
+start: mov ax,data
+       mov ds,ax
+       
+       lea si,string
+       lea di,substring
+       mov cx,len1
+       mov dx,len2
+       
+       mov ah,[di]
+back:  mov al,[si]
+       
+       cmp al,ah
+       jz check
+       
+       inc si
+       dec cx
+       jz end
+       jmp back
+       
+check: dec cx
+       dec dx
+       jz find
+       inc si
+       inc di
+       mov al,[si]
+       mov ah,[di]
+       cmp al,ah
+       jz check
+       mov dx,len2
+       lea di,substring
+       mov ah,[di]
+       jmp back
+
+find: mov found,01h        
+
+end:       
+mov ah,4ch
+int 21h
+code ends
+end start

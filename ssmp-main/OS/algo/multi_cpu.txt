@@ -1,0 +1,30 @@
+Multi-level
+Algorithm
+1. Start
+2. Read the no:of processes N
+3. Read the arrival time, burst time and process type (system/user) value of each process in an array
+4. Read the time quantum QUANTUM for the process
+5. Initialise SUM,TURNAROUNDTIME,WAITINGTIME to 0
+6. Initialise COMPLETED to 0
+7. While COMPLETED is not equal to N
+8. Begin:
+9. Choose an unfinished system process from array at time SUM if available. Else choose a process on fcfs priority.
+10. If arrival time of PROCESS is greater than SUM, set SUM to arrival time
+11. If burst time of PROCESS is less than QUANTUM:
+12. Begin:
+13. Add the value of PROCESS burst time to SUM
+14. Calculate process turnaround time tat by (sum-PROCESS arrival time)
+15. Calculate process waiting time wt by (tat-PROCESS burst time)
+16. Add the value of tat to TURNAROUNDTIME
+17. Add the value of wt to WAITINGTIME
+18. Increment the value of COMPLETED
+19. End:
+20. Else:
+21. Begin:
+22. Decrement the value of QUANTUM from PROCESS burst time
+23. Add the value of QUANTUM to SUM
+24. End:
+25. End:
+26. Calculate average turnaround time by TURNAROUNDTIME/N
+27. Calculate average waiting time by WAITINGTIME/N
+28. End

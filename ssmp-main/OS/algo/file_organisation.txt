@@ -1,0 +1,64 @@
+Single level directory
+Algorithm
+1. Start
+2. Create an array ROOT of size N and set the value of INDEX to 0 3. To insert a file:
+4. Read the file name
+5. Add a pointer of the file to INDEX element of ROOT
+6. Increment the value of INDEX
+7. To search a file:
+8. Read the value of file name to search
+9. Traverse through ROOT till INDEX and check for the file name
+10. If file is found, print the location of the file as ROOT/filename 11. If file is not found, print ”File is not found”
+12. End
+________________________________________________________________________________________________________________________________
+
+Two level directory
+Algorithm
+1. Start
+2. Create an array ROOT of size N and set the value of ROOT INDEX to 0 3. To create a user directory:
+4. Read the user DIRECTORY NAME
+5. Initialise the DIRECTORY FILE INDEX of user directory to 0
+6. Add a FILE ARRAY to store files
+7. Add a pointer of the user directory to ROOT INDEX element of ROOT 8. Increment the value of ROOT INDEX
+9. To create a file:
+10. Choose a user directory
+11. Enter a filename
+12. Add a pointer of the file to DIRECTORY FILE INDEX element of user directory
+13. Increment the value of DIRECTORY FILE INDEX
+14. To search a file:
+15. Read the value of file name to search
+16. For every directory in ROOT:
+17. Traverse through the FILE ARRAY till DIRECTORY FILE INDEX
+18. If file is found, print the location of the file as ROOT/DIRECTORY NAME/filename and exit 19. If file is not found, print ”File is not found”
+20. End
+________________________________________________________________________________________________________________________________
+
+Hierarchial directory
+Algorithm
+1. Start
+2. Create an array ROOT of size N and set the value of ROOT INDEX to 0
+3. To create a user directory:
+4. Read the user DIRECTORY NAME
+5. Initialise the DIRECTORY FILE INDEX of user directory to 0
+6. Add a FILE ARRAY to store files
+7. Add a pointer of the user directory to ROOT INDEX element of ROOT
+8. Increment the value of ROOT INDEX
+9. To create a folder:
+10. Choose ROOT, a user directory or sub-directories within the user directory
+11. Enter a directory name
+12. Initialise DIRECTORY FILE INDEX and DIRECTORY FOLDER INDEX to 0
+13. Add a FILES array to store files and DIRECTORIES array to store sub-directories
+14. Add a pointer of the newly created directory to its parent directory
+15. Add a pointer of the parent directory to the newly created directory
+16. Increment the value of DIRECTORY FOLDER INDEX of the parent directory
+17. To create a file:
+18. Choose a user directory or sub-directories within the user directory
+19. Enter a filename
+20. Add a pointer of the file to DIRECTORY FILE INDEX element of the FILES array of the chosen parent directory
+21. Increment the value of DIRECTORY FILE INDEX of parent directory
+22. To search a file:
+23. Read the value of file name to search
+24. Recursively search through each directory
+25. If the file is found, print the file path
+26. If file is not found, print ”File is not found”
+27. End

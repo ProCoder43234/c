@@ -1,0 +1,15 @@
+FCFS
+Algorithm
+1. Start
+2. Read the no:of processes N
+3. Read the arrival time and burst time of each process in an array
+4. Initialise SUM,TURNAROUNDTIME,WAITINGTIME to 0
+5. For each process in array:
+6. Begin:
+7. Add the value of process burst time to sum
+8. Calculate process turnaround time tat by (sum-process arrival time) 9. Calculate process waiting time wt by (tat-process burst time)
+10. Add the value of tat to TURNAROUNDTIME
+11. Add the value of wt to WAITINGTIME
+12. End:
+13. Calculate average turnaround time by TURNAROUNDTIME/N 14. Calculate average waiting time by WAITINGTIME/N
+15. End

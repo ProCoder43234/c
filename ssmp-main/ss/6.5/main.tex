@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage[legalpaper, potrait, margin=1in]{geometry}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{graphics}
+\usepackage{listings}
+\lstset{
+  breaklines=true,
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codepurple},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\begin{document}
+\date{}
+\maketitle{\begin{center}\Huge{SYSTEM SOFTWARE AND MICROPROCESSOR LAB \\EXPERIMENT 6.5}\end{center}}
+
+\addvspace{100mm}
+
+\begin{center}
+\Huge{\underline{DONE BY}}
+\huge{
+\vspace{5mm}
+\\AJAY KRISHNA K V
+\vspace{5mm}
+\\S5 CSE
+\vspace{5mm}
+\\ROLL NO:07
+\vspace{5mm}
+\\KTU REG.NO: TVE19CS007
+}
+\end{center}
+
+\newpage
+\paragraph{
+\\Experiment no: 6.5
+\\Date: 05.03.22
+}
+
+\begin{center}
+\Huge{\textbf{Macro processor}}
+\end{center}
+
+\section*{Aim}
+Implement a single pass macro processor
+
+\section*{Algorithm}
+\VerbatimInput{algo.txt}
+
+\section*{Program}
+\lstinputlisting[language=C]{macroprocessor.c}
+
+
+\section*{Output}
+\subsection*{\underline{input.txt}}
+\VerbatimInput{input.txt}
+
+\subsection*{\underline{output.txt}}
+\VerbatimInput{output.txt}
+
+\subsection*{\underline{namtab.txt}}
+\VerbatimInput{namtab.txt}
+
+\subsection*{\underline{argtab.txt}}
+\VerbatimInput{argtab.txt}
+
+\subsection*{\underline{deftab.txt}}
+\VerbatimInput{deftab.txt}
+
+
+\section*{Result}
+The algorithm for single pass macro processor was implemented
+\end{document}

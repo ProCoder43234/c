@@ -1,0 +1,10 @@
+1. Start
+2. Read the MEMORYSIZE and PAGESIZE
+3. Calculate PAGECOUNT = MEMORYSIZE/PAGESIZE
+4. Read the no:of processes in PROCESSCOUNT
+5. Read the no:of pages required by each process in REQUIREMENT array and associated page table in
+PAGETABLE
+6. Read the process number and logical address in terms of pagenumber and pageoffset to calculate
+physical address
+7. Calculate physical address by pagenumber*pagesize+pageoffset
+8. End

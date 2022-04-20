@@ -1,0 +1,30 @@
+DATA SEGMENT
+    A DB 0FFH
+    B DB 0FFH
+    SUM DB ?
+    CARRY DB 00H
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS: CODE, DS:DATA
+
+START:
+        MOV AX,DATA
+        MOV DS,AX
+        
+        CALL ADDITION
+        MOV AX,4CH
+        INT 21H
+ADDITION PROC
+
+        MOV AL,A
+        ADD AL,B
+        JNC SKIP
+        INC CARRY
+SKIP:   MOV SUM,AL
+
+
+RET
+ADDITION ENDP 
+CODE ENDS
+END START

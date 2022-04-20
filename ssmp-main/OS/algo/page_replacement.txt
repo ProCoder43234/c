@@ -1,0 +1,64 @@
+FIFO
+Algorithm
+1. Start
+2. Read the no:of pages memory can hold in CAPACITY
+3. Initialise a STACK of size CAPACITY
+4. Read the no:of pages in PAGECOUNT
+5. Read the page values in PAGES array
+6. Initialise a boolean array AVAILABLE to check whether a page is available in memory or not 7. Set the value of PAGEFAULT to 0
+8. For each PAGE in PAGES array:
+9. BeginLoop
+10. If the PAGE is not available in memory, increment the value of PAGEFAULT 11. If STACK is full, pop the topmost element from it
+12. Push the PAGE into the STACK
+13. Mark PAGE as available
+14. EndLoop
+15. Calculate miss ratio by PAGEFAULT/PAGECOUNT 16. Calculate hit ratio by 1 - miss ratio
+17. End
+
+________________________________________________________________________________________________________________________________
+
+LRU
+Algorithm
+1. Start
+2. Read the no:of pages memory can hold in CAPACITY
+3. Initialise a ARRAY of size CAPACITY
+4. Read the no:of pages in PAGECOUNT
+5. Read the page values in PAGES array
+6. Initialise a boolean array AVAILABLE to check whether a page is available in memory or not
+7. Set the value of PAGEFAULT to 0
+8. For each PAGE in PAGES array:
+9. BeginLoop
+10. If the PAGE available in memory, bring it to the beginning of the ARRAY
+11. Else:
+12. Increment the value of PAGEFAULT
+13. Mark PAGE as available
+14. Shift the ARRAY elements to the right and add PAGE to the beginning. If ARRAY is full, remove the rightmost element
+15. EndLoop
+16. Calculate miss ratio by PAGEFAULT/PAGECOUNT
+17. Calculate hit ratio by 1 - miss ratio
+18. End
+
+________________________________________________________________________________________________________________________________
+
+LFU
+Algorithm
+1. Start
+2. Read the no:of pages memory can hold in CAPACITY
+3. Initialise a ARRAY of size CAPACITY
+4. Read the no:of pages in PAGECOUNT
+5. Read the page values in PAGES array
+6. Initialise a boolean array AVAILABLE to check whether a page is available in memory or not
+7. Initialise a FREQUENCY array to keep track of no:of times a PAGE is used
+8. Set the value of PAGEFAULT to 0
+9. For each PAGE in PAGES array:
+10. BeginLoop
+11. Increment the value of FREQUENCY[PAGE]
+12. If PAGE is not available in memory:
+13. Increment the value of PAGEFAULT
+14. Mark PAGE as available
+15. If ARRAY is not full, add PAGE to ARRAY
+16. Else calculate the PAGE with minimum frequency from the pages in ARRAY using FREQUENCY. Replace that PAGE with the current PAGE
+17. EndLoop
+18. Calculate miss ratio by PAGEFAULT/PAGECOUNT
+19. Calculate hit ratio by 1 - miss ratio
+20. End

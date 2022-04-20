@@ -1,0 +1,31 @@
+data segment
+    arr dw 0212h,1301h,0ffffh,1004h,0005h,1041h
+    len db 06h
+    search dw 1004h
+    index db ?
+data ends
+
+code segment
+assume cs:code,ds:data    
+
+start: mov ax,data
+       mov ds,ax
+       
+       lea si,arr
+       mov cl,len
+       mov ax,search 
+
+back:  cmp ax,[si]
+       jz skip
+        
+       add si,02h 
+       loop back
+       
+skip:  mov bl,len
+       sub bl,cl
+       mov index,bl
+               
+mov ah,4ch
+int 21h
+code ends
+end start

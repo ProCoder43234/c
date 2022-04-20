@@ -1,0 +1,38 @@
+data segment
+    arr dw 0212h,1301h,0ffffh,1004h,0005h,1041h
+    len db 06h
+data ends
+
+code segment
+assume cs:code,ds:data    
+
+start: mov ax,data
+       mov ds,ax
+ 
+       mov ch,len
+
+back2: lea si,arr
+       mov cl,ch
+       dec cl
+       jz end
+
+back:  mov ax,[si]
+       mov bx,[si+2]
+       cmp ax,bx
+       jc skip
+       jz skip
+       mov [si],bx
+       mov [si+2],ax
+       
+skip:  add si,02h
+       dec cl
+       jnz back
+       
+       dec ch
+       jnz back2
+
+end:       
+mov ah,4ch
+int 21h
+code ends
+end start

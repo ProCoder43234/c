@@ -1,0 +1,22 @@
+Priority
+Algorithm
+1. Start
+2. Read the no:of processes N
+3. Read the arrival time, burst time and priority of each process in an array 4. Initialise SUM,TURNAROUNDTIME,WAITINGTIME to 0
+5. Initialise COMPLETED to 0
+6. While COMPLETED is not equal to N
+7. Begin:
+8. Find the PROCESS with biggest priority at time = SUM
+9. If such a process does not exist, increment the value of SUM
+10. Else:
+11. Begin:
+12. Add the value of PROCESS burst time to SUM
+13. Calculate process turnaround time tat by (sum-PROCESS arrival time) 14. Calculate process waiting time wt by (tat-PROCESS burst time)
+15. Add the value of tat to TURNAROUNDTIME
+16. Add the value of wt to WAITINGTIME
+17. Increment the value of COMPLETED
+18. End:
+19. End:
+20. Calculate average turnaround time by TURNAROUNDTIME/N
+21. Calculate average waiting time by WAITINGTIME/N
+22. End
